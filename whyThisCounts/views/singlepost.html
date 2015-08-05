@@ -1,0 +1,41 @@
+<h1>{{ post.title }}</h1>
+
+
+<h3>{{ post.subtitle }}</h3>
+
+<p>{{post.author}} {{post.date}}<p>
+
+<h3> Why It Counts </h3>
+
+<div class="rating">
+  <p> {{ post.storyRating }}
+    <span ng-click="plusOneStory($index)"> &#9650; </span>
+    <span ng-click="minusOneStory($index)"> &#x25bc; </span>
+  </p>
+</div>
+
+<ul>
+  <li ng-repeat="points in post.mainContent">{{ points }}</li>
+</ul>
+
+<h3> Progressive Points </h3>
+<div class="rating">
+  <p> {{ post.proRating }}
+    <span ng-click="plusOnePro($index)"> &#9650; </span>
+    <span ng-click="minusOnePro($index)"> &#x25bc; </span>
+  </p>
+</div>
+<ul>
+  <li ng-repeat="proPoints in post.proPoints">{{ proPoints }}</li>
+</ul>
+
+<h3> Conservative Points </h3>
+<div class="rating">
+  <p> {{ post.conRating }}
+    <span ng-click="plusOneCon($index)"> &#9650; </span>
+    <span ng-click="minusOneCon($index)"> &#x25bc; </span>
+  </p>
+</div>
+<ul>
+  <li ng-repeat="conPoints in post.conPoints">{{ conPoints }}</li>
+</ul>

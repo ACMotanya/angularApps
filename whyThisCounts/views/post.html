@@ -1,0 +1,12 @@
+<article ng-repeat="item in items">
+  <div class="post-preview">
+  <a href="#/post/{{items.indexOf(item)}}">
+    <h2 class="post-title"> {{ item.title }} </h2>
+
+    <h3 class="post-subtitle"> {{ item.subtitle }} </h3>
+
+  </a>
+  <p class="post-meta">Posted by {{ item.author }} on {{ item.date }}</p>
+</div>
+</div>
+</article>
