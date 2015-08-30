@@ -49,19 +49,49 @@ exports.read = function(req, res) {
  * Update a Product
  */
 exports.update = function(req, res) {
+  var product = req.product;
 
+  product = _.extend(product, req.body);
+
+  product.save(function(err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(product);
+    }
+  });
 };
 
 /**
  * Delete an Product
  */
 exports.delete = function(req, res) {
+  var product = req.product;
 
+  product.remove(function(err) {
+    if (err) {
+      return res.status(404).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(product);
+    }
+  });
 };
 
 /**
  * List of Products
  */
 exports.list = function(req, res) {
-
+  Product.find().exec(function(err, products) {
+    if(err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(products);
+    }
+  });
 };
