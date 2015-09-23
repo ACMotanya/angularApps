@@ -7,6 +7,3 @@ app.factory('places', ['$http', function($http) {
     return err;
   })
 }]);
-
-
-//I am thinking baout where my electricity comes from I know i have  acliue about it
