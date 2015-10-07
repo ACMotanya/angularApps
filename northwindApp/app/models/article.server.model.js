@@ -32,3 +32,6 @@ var ArticleSchema = new Schema({
 });
 
 mongoose.model('Article', ArticleSchema);
+
+
+//I think i still have to finish this. I will do it right after I finish the other projects and stuff.//
